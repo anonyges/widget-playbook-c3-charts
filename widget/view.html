@@ -1,31 +1,23 @@
 <!-- Copyright start
-    Copyright (C) 2008 - 2023 Fortinet Inc.
-    All rights reserved.
-    FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
+  Copyright (C) 2008 - 2024 Fortinet Inc.
+  All rights reserved.
+  FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
   Copyright end -->
-<!-- Edit Status 
-    author: Danny
-    modified: 240324
--->
-<div class="widget widget-container ng-scope">
-    <div class="display-flex-space-between widget-title widget-title-padding">
-        <div class="widget-title-width padding-right-0 padding-left-0">
-            <h5 class="margin-top-0 margin-bottom-0 text-overflow font-1em ng-binding">{{config.title}}</h5>
-        </div>
-        <div class="widget-actions-width padding-right-0 padding-left-0">
-            <span class="fa btn widget-action-icon btn-sm pull-right fa-caret-up" data-ng-click="collapsed = !collapsed"
-                data-ng-class="{'fa-caret-up': !collapsed, 'fa-caret-down': collapsed}" role="button"
-                tabindex="0"></span>
-            <span class="icon icon-refresh btn btn-sm widget-action-icon pull-right" ng-click="refresh()"
-                data-uib-tooltip="Refresh" role="button" tabindex="0"></span>
-        </div>
+<!-- author: kimd@fortinet.com
+    modified: 240830 -->
+<div class="widget widget-container chart">
+  <div data-ng-show="config.title_show" class="display-flex-space-between widget-title widget-title-padding">
+    <div class="widget-title-width padding-right-0 padding-left-0">
+      <h5 class="margin-top-0 margin-bottom-0 text-overflow font-1em ng-binding">{{config.title}}</h5>
     </div>
-    <div data-ng-hide="collapsed">
-        <div id="{{chart_uid}}"></div>
-        <cs-spinner data-ng-show="chart_loading" class="ng-scope ng-isolate-scope ng-hide" aria-hidden="true">
-            <div class="loader" data-ng-class="{'background' : showBackground, 'margin-0': noMargin}">
-                <div class="cs-spinner"></div>
-            </div>
-        </cs-spinner>
+    <div class="widget-actions-width padding-right-0 padding-left-0">
+      <span class="fa btn widget-action-icon btn-sm pull-right fa-caret-up" data-ng-click="ui_collapsed = !ui_collapsed"
+        data-ng-class="{'fa-caret-up': !ui_collapsed, 'fa-caret-down': ui_collapsed}" role="button" tabindex="0"></span>
+      <span class="icon icon-refresh btn btn-sm widget-action-icon pull-right" ng-click="bt_refresh()"
+        data-uib-tooltip="Refresh" role="button" tabindex="0"></span>
     </div>
+  </div>
+  <div id="{{container_uid}}" data-ng-hide="ui_collapsed">
+    <div id="{{chart_uid}}"></div>
+  </div>
 </div>

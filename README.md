@@ -1,14 +1,22 @@
 # Playbook C3 Charts
 
-## Usage
+## Description
 
-Can render by chart by 2 types of data,
+Output of the playbook is rendered to C3 charts.  
+The return value(set variable) result must contain "data" as chart return value.  
+For more available chart value check link: <https://c3js.org/examples.html>
 
-### Select Chart Render Method
+### Render Page
 
-- Render data by user input JSON
-- Render data by playbook
+- Dashboard
+- View Panel
+- Reports
 
-### Select fields to monitor
+## Change Log
 
-When field is selected, it redraws the chart with user input or re-calls the playbook to draw as a chart.
+### 2.0.0
+
+- Changed the internals to use ng-form to have strict validation checking
+- added "Log" button to see the failed playbook
+- added "Clear" button to clear the set of the playbook
+- added "Show Title" button to hide the "Title" and "Collapse/Refresh" button when outputing into reports
